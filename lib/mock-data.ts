@@ -389,6 +389,100 @@ export const mockStats = [
 	},
 ];
 
+// Mock Savings & Investments Data
+export const mockSavingsInvestments = [
+	{
+		id: "si-1",
+		type: "Savings" as const,
+		platform: "PiggyVest",
+		amount: 50000,
+		amountInvested: 50000,
+		interestRate: 0, // No interest for regular savings
+		compounding: "monthly" as const,
+		startDate: "2024-01-15",
+		date: "2024-01-15",
+		notes: "Emergency fund contribution",
+		userId: "user-1",
+	},
+	{
+		id: "si-2",
+		type: "Investment" as const,
+		platform: "Cowrywise",
+		amount: 75000,
+		amountInvested: 75000,
+		interestRate: 12.5, // 12.5% annual interest
+		compounding: "monthly" as const,
+		startDate: "2024-01-14",
+		date: "2024-01-14",
+		notes: "Auto-invest in mutual funds",
+		userId: "user-1",
+	},
+	{
+		id: "si-3",
+		type: "Savings" as const,
+		platform: "PiggyVest",
+		amount: 25000,
+		amountInvested: 25000,
+		interestRate: 0,
+		compounding: "monthly" as const,
+		startDate: "2024-01-10",
+		date: "2024-01-10",
+		notes: "Weekly savings",
+		userId: "user-1",
+	},
+	{
+		id: "si-4",
+		type: "Investment" as const,
+		platform: "Stocks",
+		amount: 100000,
+		amountInvested: 100000,
+		interestRate: 8.2, // Expected annual return
+		compounding: "annually" as const,
+		startDate: "2024-01-08",
+		date: "2024-01-08",
+		notes: "Dangote Cement shares",
+		userId: "user-1",
+	},
+	{
+		id: "si-5",
+		type: "Investment" as const,
+		platform: "Mutual Funds",
+		amount: 50000,
+		amountInvested: 50000,
+		interestRate: 15.3, // High-performing fund
+		compounding: "monthly" as const,
+		startDate: "2024-01-05",
+		date: "2024-01-05",
+		notes: "Stanbic IBTC fund",
+		userId: "user-1",
+	},
+	{
+		id: "si-6",
+		type: "Savings" as const,
+		platform: "Cowrywise",
+		amount: 30000,
+		amountInvested: 30000,
+		interestRate: 0,
+		compounding: "monthly" as const,
+		startDate: "2024-01-03",
+		date: "2024-01-03",
+		notes: "Goal savings - vacation",
+		userId: "user-1",
+	},
+];
+
+export const CATEGORIES = [
+	{ id: "1", name: "Food & Dining" },
+	{ id: "2", name: "Transportation" },
+	{ id: "3", name: "Housing" },
+	{ id: "4", name: "Shopping" },
+	{ id: "5", name: "Utilities" },
+	{ id: "6", name: "Healthcare" },
+	{ id: "7", name: "Entertainment" },
+	{ id: "8", name: "Salary" },
+	{ id: "9", name: "Investment" },
+];
+
 // Helper functions for mock data
 export const getMockData = {
 	user: () => mockUser,

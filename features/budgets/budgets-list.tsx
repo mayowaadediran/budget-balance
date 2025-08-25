@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { formatCurrency, formatDate, getPercentage } from "@/lib/utils";
 import { Calendar, MoreHorizontal, Edit, Trash2, Eye } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Budget {
 	id: string;
@@ -52,6 +53,8 @@ export function BudgetsList() {
 		},
 	];
 
+	const router = useRouter();
+
 	const getStatusColor = (status: Budget["status"]) => {
 		switch (status) {
 			case "active":
@@ -72,7 +75,11 @@ export function BudgetsList() {
 				const remaining = budget.totalAmount - budget.spentAmount;
 
 				return (
-					<Card key={budget.id} className="hover:shadow-lg transition-shadow">
+					<Card
+						key={budget.id}
+						className="hover:shadow-lg transition-shadow cursor-pointer"
+						onClick={() => router.push(`/budgets/${budget.id}`)}
+					>
 						<CardHeader>
 							<div className="flex items-center justify-between">
 								<CardTitle className="text-lg">{budget.name}</CardTitle>
